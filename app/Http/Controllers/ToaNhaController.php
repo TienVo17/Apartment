@@ -2,63 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ToaNha;
 use Illuminate\Http\Request;
 
 class ToaNhaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Display a listing of the resource.
     public function index()
     {
-        return view('admin.quan_ly_toa_nha');
+        $toanha = ToaNha::all();
+        return view('admin.quan_ly_toa_nha', compact('toanha'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Show the form for creating a new resource.
     public function create()
     {
-        //
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Store a newly created resource in storage.
     public function store(Request $request)
     {
-        //
+        ToaNha::create($request->all());
+        return redirect()->route('quan_ly_toa_nha.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Show the form for editing the specified resource.
+    public function edit($id)
     {
-        //
+        $toanha = ToaNha::findOrFail($id);
+        return response()->json($toanha);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Update the specified resource in storage.
+    public function update(Request $request, $id)
     {
-        //
+        $toanha = ToaNha::findOrFail($id);
+        $toanha->update($request->all());
+        return redirect()->route('quan_ly_toa_nha.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // Remove the specified resource from storage.
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $toanha = ToaNha::findOrFail($id);
+        $toanha->delete();
+        return redirect()->route('quan_ly_toa_nha.index');
     }
 }

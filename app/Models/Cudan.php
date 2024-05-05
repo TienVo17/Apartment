@@ -43,6 +43,11 @@ class Cudan extends Model
 		'DiaChi',
 		'NgaySinh',
 		'GioiTinh',
-		'LaChuHo'
+		'LaChuHo',
+		'AnhDaiDien',
+		'CCCD',
+		'RentStart',
+		'RentEnd',
+
 	];
 }
