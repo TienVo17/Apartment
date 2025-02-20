@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Yeucaudichvu
- * 
+ *
  * @property int $MaYeuCau
  * @property int|null $MaCanHo
  * @property int|null $MaDichVu
@@ -22,22 +22,22 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Yeucaudichvu extends Model
 {
-	protected $table = 'yeucaudichvu';
-	protected $primaryKey = 'MaYeuCau';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'yeucaudichvu';
+    protected $primaryKey = 'MaYeuCau';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'MaYeuCau' => 'int',
-		'MaCanHo' => 'int',
-		'MaDichVu' => 'int',
-		'ThoiGianYeuCau' => 'datetime'
-	];
+    protected $casts = [
+        'MaYeuCau' => 'int',
+        'MaCanHo' => 'int',
+        'MaDichVu' => 'int',
+        'ThoiGianYeuCau' => 'datetime'
+    ];
 
-	protected $fillable = [
-		'MaCanHo',
-		'MaDichVu',
-		'ThoiGianYeuCau',
-		'GhiChu'
-	];
+    protected $fillable = [
+        'MaCanHo',
+        'MaDichVu',
+        'ThoiGianYeuCau',
+        'GhiChu'
+    ];
 }

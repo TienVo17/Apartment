@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Cudan
- * 
+ *
  * @property int $MaCuDan
  * @property string|null $HoTenCuDan
  * @property string|null $SoDienThoai
@@ -25,29 +25,29 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Cudan extends Model
 {
-	protected $table = 'cudan';
-	protected $primaryKey = 'MaCuDan';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'cudan';
+    protected $primaryKey = 'MaCuDan';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'MaCuDan' => 'int',
-		'NgaySinh' => 'datetime',
-		'LaChuHo' => 'bool'
-	];
+    protected $casts = [
+        'MaCuDan' => 'int',
+        'NgaySinh' => 'datetime',
+        'LaChuHo' => 'bool'
+    ];
 
-	protected $fillable = [
-		'HoTenCuDan',
-		'SoDienThoai',
-		'Email',
-		'DiaChi',
-		'NgaySinh',
-		'GioiTinh',
-		'LaChuHo',
-		'AnhDaiDien',
-		'CCCD',
-		'RentStart',
-		'RentEnd',
+    protected $fillable = [
+        'HoTenCuDan',
+        'SoDienThoai',
+        'Email',
+        'DiaChi',
+        'NgaySinh',
+        'GioiTinh',
+        'LaChuHo',
+        'AnhDaiDien',
+        'CCCD',
+        'RentStart',
+        'RentEnd',
 
-	];
+    ];
 }

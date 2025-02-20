@@ -9,10 +9,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
 /**
  * Class Toanha
- * 
+ *
  * @property int $MaToaNha
  * @property string|null $TenToaNha
  * @property int|null $SoLuongCanHo
@@ -22,11 +21,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Toanha extends Model
 {
-	use HasFactory;
+    use HasFactory;
     public $timestamps = false;
-    protected $table = 'toanha'; 
-    protected $primaryKey = 'ma_toa_nha'; 
-    public $incrementing = true; 
+    protected $table = 'toanha';
+    protected $primaryKey = 'ma_toa_nha';
+    public $incrementing = true;
 
     protected $fillable = [
         'ten_toa_nha',

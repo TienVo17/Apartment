@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Canho; 
+use App\Models\Canho;
 use App\Models\ToaNha;
 use Illuminate\Support\Facades\DB;
 
@@ -25,8 +25,8 @@ class CanHoController extends Controller
     {
         $listToaNha = DB::table('toanha')->select('ma_toa_nha', 'ten_toa_nha')->get();
         $listCuDan = DB::table('cudan')->select('MaCuDan', 'HoTenCuDan')->get();
-        return view('admin.them_moi_can_ho', compact('listToaNha','listCuDan'));
-        
+        return view('admin.them_moi_can_ho', compact('listToaNha', 'listCuDan'));
+
     }
 
     /**
@@ -38,7 +38,7 @@ class CanHoController extends Controller
         return redirect()->route('apartments.index');
     }
 
-    
+
     /**
      * Xóa một căn hộ.
      */
@@ -62,9 +62,9 @@ class CanHoController extends Controller
     public function edit($id)
     {
         $apartment = Canho::findOrFail($id);
-    $listToaNha = DB::table('toanha')->select('ma_toa_nha', 'ten_toa_nha')->get();
-    $listCuDan = DB::table('cudan')->select('MaCuDan', 'HoTenCuDan')->get();
-    return view('admin.chinh_sua_can_ho', ['apartment' => $apartment, 'listToaNha' => $listToaNha, 'listCuDan' => $listCuDan]);
+        $listToaNha = DB::table('toanha')->select('ma_toa_nha', 'ten_toa_nha')->get();
+        $listCuDan = DB::table('cudan')->select('MaCuDan', 'HoTenCuDan')->get();
+        return view('admin.chinh_sua_can_ho', ['apartment' => $apartment, 'listToaNha' => $listToaNha, 'listCuDan' => $listCuDan]);
     }
 
     /**
@@ -80,7 +80,7 @@ class CanHoController extends Controller
     {
         // Lấy từ khóa tìm kiếm từ request
         $keyword = $request->input('keyword');
-    
+
         // Tìm kiếm các căn hộ có mã căn hộ, mã tòa nhà hoặc mã cư dân chứa từ khóa
         $apartments = Canho::where('MaCanHo', 'like', "%$keyword%")
                             ->orWhere('ma_toa_nha', 'like', "%$keyword%")
@@ -95,5 +95,5 @@ class CanHoController extends Controller
 
 
 
-    
+
 }
