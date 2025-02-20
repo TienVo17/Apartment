@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Dichvu
- * 
+ *
  * @property int $MaDichVu
  * @property string|null $TenDichVu
  * @property string|null $MoTa
@@ -21,20 +21,20 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Dichvu extends Model
 {
-	protected $table = 'dichvu';
-	protected $primaryKey = 'MaDichVu';
-	public $incrementing = false;
-	public $timestamps = false;
+    protected $table = 'dichvu';
+    protected $primaryKey = 'MaDichVu';
+    public $incrementing = false;
+    public $timestamps = false;
 
-	protected $casts = [
-		'MaDichVu' => 'int',
-		'Gia' => 'float'
-	];
+    protected $casts = [
+        'MaDichVu' => 'int',
+        'Gia' => 'float'
+    ];
 
-	protected $fillable = [
-		'TenDichVu',
-		'MoTa',
-		'Gia',
-		'LoaiDichVu'
-	];
+    protected $fillable = [
+        'TenDichVu',
+        'MoTa',
+        'Gia',
+        'LoaiDichVu'
+    ];
 }
